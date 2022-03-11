@@ -1,18 +1,16 @@
 :root {
---accent: #a1ecff;
---second-accent: #bd0b73;
---base: rgb(0, 34, 54);
-  --text-dark: #1d1d1d;
-  --text-medium: #242424;
-  --text-mediumlight: #202020;
-  --text-light: #f1f1f1;
+  --accent: #14a098;
+  --second-accent: #CB2D6F;
+  --text-dark: #0F292F;
+  --text-medium: #501F3A;
+  --text-light: #CCCCCC;
 }
 
 body {
   box-sizing: border-box;
   margin: 0 auto;
   height: 100vh;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.6;  
 }
 
@@ -36,7 +34,12 @@ p {
 .current {
   color: var(--second-accent);
   font-weight: bold;
+  animation-fill-mode: both;  
   animation: wip 1.5s ease-in infinite alternate;
+  -webkit-animation: wip 1.5s ease-in infinite alternate;
+  -ms-animation: wip 1.5s ease-in infinite alternate;
+  -moz-animation: wip 1.5s ease-in infinite alternate;
+  -o-animation: wip 1.5s ease-in infinite alternate;
 }
 
 @keyframes wip {
@@ -49,30 +52,33 @@ p {
 header {
   padding: 0 5em;
   background-color: var(--accent);
-  background: radial-gradient(circle, var(--second-accent) 0%, var(--text-dark) 100%);
-  animation: background .5s ease-in-out infinite alternate;
+  background: radial-gradient(circle, var(--text-medium) 0%, var(--text-dark) 100%);
+  animation-fill-mode: both;  
+  animation: background-gradient 1s ease-in-out infinite alternate;
+  -webkit-animation: background-gradient 1s ease-in-out infinite alternate;
+  -ms-animation: background-gradient 1s ease-in-out infinite alternate;
+  -moz-animation: background-gradient 1s ease-in-out infinite alternate;
+  -o-animation: background-gradient 1s ease-in-out infinite alternate;
 }
 
-@keyframes background {
-  0% {background: radial-gradient(circle, var(--second-accent) 0%, var(--text-dark) 100%);}
-  20% {background: radial-gradient(circle, var(--second-accent) 2%, var(--text-dark) 100%);}
-  40% {background: radial-gradient(circle, var(--second-accent) 4%, var(--text-dark) 100%);}
-  60% {background: radial-gradient(circle, var(--second-accent) 6%, var(--text-dark) 100%);}
-  80% {background: radial-gradient(circle, var(--second-accent) 8%, var(--text-dark) 100%);}
-  100% {background: radial-gradient(circle, var(--second-accent) 10%, var(--text-dark) 100%);}
+@keyframes background-gradient {
+  0% {background: radial-gradient(circle, var(--text-medium) 0%, var(--text-dark) 100%);}
+  20% {background: radial-gradient(circle, var(--text-medium) 3%, var(--text-dark) 100%);}
+  40% {background: radial-gradient(circle, var(--text-medium) 6%, var(--text-dark) 100%);}
+  60% {background: radial-gradient(circle, var(--text-medium) 9%, var(--text-dark) 100%);}
+  80% {background: radial-gradient(circle, var(--text-medium) 12%, var(--text-dark) 100%);}
+  100% {background: radial-gradient(circle, var(--text-medium) 15%, var(--text-dark) 100%);}
 }
 
 header h1 {
   color: var(--text-light);
   margin-bottom: -.3em;
   text-transform: uppercase;
-  /* border: var(--accent) solid .5px; */
-  /* box-shadow: 0px 0px 10px 1px rgba(29, 29, 29, 0.1); */
-  /* box-shadow: 0px 0px 10px 1px rgba(242, 242, 242, 0.1); */
-  /* box-shadow: 0px 0px 10px 1px rgba(189, 11, 115, .1); */
+  border: var(--accent) solid .5px;
+  box-shadow: 0px 0px 10px 1px rgba(242, 242, 242, .1);
   border-radius: 3px;
   padding: .4em 1em;
-  background: linear-gradient(45deg, violet, var(--accent));
+  background: linear-gradient(45deg, var(--text-light), var(--accent));
   background-clip: text;  
   -webkit-background-clip: text;  
   -moz-background-clip: text;  
@@ -92,7 +98,7 @@ header p {
   padding: 0 1em;
   font-size: 1rem;
   text-transform: uppercase;
-  background: linear-gradient(45deg, violet, var(--accent));
+  background: linear-gradient(45deg, var(--text-light), var(--second-accent));
   background-clip: text;  
   -webkit-background-clip: text;  
   -moz-background-clip: text;  
@@ -115,13 +121,19 @@ header p {
 /* Links */
 
 a {
-  color: var(--base);
+  color: var(--text-light);
   text-decoration: none;
   text-transform: uppercase;
   padding: .5em 1em;
   font-weight: bold;
   font-size: 1.2rem;
   border: 3px solid transparent;
+  background: linear-gradient(45deg, var(--text-light), var(--accent));
+  background-clip: text;  
+  -webkit-background-clip: text;  
+  -moz-background-clip: text;  
+  -moz-text-fill-color: transparent;  
+  -webkit-text-fill-color: transparent;  
 }
 
 footer a {
@@ -131,19 +143,25 @@ footer a {
 nav a:hover {
   transform: scale(1.2);
   border-bottom: var(--accent) 3px solid;
-  color: var(--second-accent);
+  border-radius: 3px;
 }
 
 a:focus {
   border: none;
-  outline: 2px solid var(--accent);
+  outline: none;
+  border: 3px solid var(--accent);
+  border-radius: 3px;
   transform: scale(1.2);
+}
+
+a:active {
+  border: 3px solid transparent;
 }
 
 /* Layout */
 
 header {
-  /* background-color: var(--accent); */
+  background-color: var(--accent);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -159,20 +177,39 @@ nav {
 }
 
 .project-list {
-  margin-top: 5em;
   display: grid;
   grid-template-columns: 1;
   grid-template-rows: repeat(auto, 1fr);
-  grid-gap: 20px;
+  place-content: center;
+  grid-gap: 2em;
 }
 
 .project-list li {
-  place-self: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0 .5em;
+  justify-self: center;
+  align-items: center;
+  max-width: 30em;
+}
+
+.project-list li::after {
+  content: "";
+  display: block;
+  border-bottom: var(--accent) solid 3px;
+  border-radius: 3px;
+  width: 300px;
 }
 
 .projects img {
-  width: 275px;
-  height: 400px;
+  width: 230px;
+  height: 300px;
+}
+
+.separator {
+  display: none;
+  margin: 0;
+  padding: 0;
 }
 
 .contact {
@@ -186,21 +223,36 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--text-dark);
+  background-color: var(--text-medium);
   color: var(--text-light);
 }
 
 .about-me,
 .projects,
 .contact {
-  padding: 2em 3em;
+  padding: 1em 3em;
   color: var(--text-dark);
   background-color: var(--text-light);
 }
 
+.project-list {
+  padding-left: 0;
+  padding-top: 0;
+}
+
+.project-list p {
+  margin: 1.5em;
+}
+
+.project-list img {
+  margin-top: 1.5em;
+  border: var(--accent) 3px solid;
+  border-radius: 3px;
+}
+
 .skills,
 .education,
-.work-experience {
+.work-history {
   padding: 1em 3em;
   background-color: var(--text-medium);
   color: var(--text-light);   
@@ -226,11 +278,11 @@ li p {
 .title-text {
   font-size: 1rem;
   font-weight: bold;
-  color: var(--accent)
+  color: var(--text-light)
 }
 
 .education .date, 
-.work-experience .date {
+.work-history .date {
   color: var(--accent);
   font-size: 1rem;
   font-weight: bold;
@@ -283,8 +335,8 @@ textarea {
 }
 
 button {
-  background-color: var(--second-accent);
-  color: var(--text-light);
+  background-color: var(--accent);
+  color: #FFF;
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -293,11 +345,12 @@ button {
   width: 15em;
   height: 3em;
   align-self: center;
+  background: linear-gradient(45deg, var(--accent), var(--second-accent));
+  margin-bottom: 1em;
 }
 
 button:focus {
-  outline: 2px solid var(--text-dark);
-
+  outline: 2px solid var(--second-accent);
 }
 
 /* Footer */
@@ -311,12 +364,23 @@ footer p {
   margin-bottom: .5em;
 }
 
+.links-wrapper {
+  margin-bottom: 1.5em;
+  padding: .5em;
+}
+
+.social-icons,
+.social-icons a {
+  width: 50px;
+  height: 50px;
+}
+
 /* Heading decorations */
 
 header .subtitle::after {
   content: "";
   display: block;
-  border-top: var(--text-mediumlight) solid 20px;
+  border-top: var(--text-medium) solid 20px;
   border-radius: 3px;
   width: 200px;
   margin: auto;
@@ -337,7 +401,7 @@ header .subtitle::after {
 
 .skills h2::after, 
 .education h2::after, 
-.work-experience h2::after {
+.work-history h2::after {
   content: "";
   display: block;  
   border-bottom: var(--second-accent) solid 15px;
@@ -346,8 +410,6 @@ header .subtitle::after {
   margin: auto;
   margin-top: -30px;
 }
-
-
 
 @media (min-width: 900px) {
 
@@ -390,43 +452,61 @@ header .subtitle::after {
   
   .education-work-wrapper {
     display: flex;
+    flex-wrap: wrap;
   }
 
   .education {
     padding-left: 5em;
     padding-right: 4em;
+    padding-bottom: 3em;
   }
 
-  .work-experience {
+  .work-history {
     padding-right: 5em; 
     padding-left: 4em; 
   }
 
-  .education, .work-experience {
+  .education, .work-history {
     display: flex;
     flex-direction: column;
-    min-width: 40vw;
+    flex-basis: 150px;
+    flex-grow: 1;    
   }
   
   .project-list {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    padding: 0 1em;
   }
 
   form {
     width: 40em;
   }
-  
-  /* .projects {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2em 10em;
+}
+
+
+@media (min-width: 900px) {
+  .project-list li {
+    flex-direction: row;
+    min-width: 800px;
   }
-  
-  .project-list {
-    display: flex;
-    justify-content: center;
-  } */
+
+  .project-list li::after {
+    display: none;
+  }
+
+  .separator {
+    display: block;
+    place-self: center;
+  }
+
+  .separator::after {
+    content: "";
+    display: block;
+    border: var(--accent) 2px solid;
+    border-radius: 3px;
+    width: 500px;
+  }
+
+  .projects img {
+    margin-right: 2em;
+  }
 }
