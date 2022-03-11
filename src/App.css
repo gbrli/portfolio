@@ -1,38 +1,432 @@
-.App {
+:root {
+--accent: #a1ecff;
+--second-accent: #bd0b73;
+--base: rgb(0, 34, 54);
+  --text-dark: #1d1d1d;
+  --text-medium: #242424;
+  --text-mediumlight: #202020;
+  --text-light: #f1f1f1;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0 auto;
+  height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.6;  
+}
+
+/* Typography */
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 1.7rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+p {
+  font-size: 1.2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Education & Work */
+
+.current {
+  color: var(--second-accent);
+  font-weight: bold;
+  animation: wip 1.5s ease-in infinite alternate;
 }
 
-.App-header {
-  background-color: #282c34;
+@keyframes wip {
+  from {color: var(--second-accent);}
+  to {color: var(--accent);}
+}
+
+/* Header section */
+
+header {
+  padding: 0 5em;
+  background-color: var(--accent);
+  background: radial-gradient(circle, var(--second-accent) 0%, var(--text-dark) 100%);
+  animation: background .5s ease-in-out infinite alternate;
+}
+
+@keyframes background {
+  0% {background: radial-gradient(circle, var(--second-accent) 0%, var(--text-dark) 100%);}
+  20% {background: radial-gradient(circle, var(--second-accent) 2%, var(--text-dark) 100%);}
+  40% {background: radial-gradient(circle, var(--second-accent) 4%, var(--text-dark) 100%);}
+  60% {background: radial-gradient(circle, var(--second-accent) 6%, var(--text-dark) 100%);}
+  80% {background: radial-gradient(circle, var(--second-accent) 8%, var(--text-dark) 100%);}
+  100% {background: radial-gradient(circle, var(--second-accent) 10%, var(--text-dark) 100%);}
+}
+
+header h1 {
+  color: var(--text-light);
+  margin-bottom: -.3em;
+  text-transform: uppercase;
+  /* border: var(--accent) solid .5px; */
+  /* box-shadow: 0px 0px 10px 1px rgba(29, 29, 29, 0.1); */
+  /* box-shadow: 0px 0px 10px 1px rgba(242, 242, 242, 0.1); */
+  /* box-shadow: 0px 0px 10px 1px rgba(189, 11, 115, .1); */
+  border-radius: 3px;
+  padding: .4em 1em;
+  background: linear-gradient(45deg, violet, var(--accent));
+  background-clip: text;  
+  -webkit-background-clip: text;  
+  -moz-background-clip: text;  
+  -moz-text-fill-color: transparent;  
+  -webkit-text-fill-color: transparent;
+}
+
+header p {
+  margin-top: -5px;
+}
+
+.subtitle {
+  margin-top: 0;
+  color: var(--text-light);
+  font-weight: bold;
+  margin-bottom: 1em;
+  padding: 0 1em;
+  font-size: 1rem;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, violet, var(--accent));
+  background-clip: text;  
+  -webkit-background-clip: text;  
+  -moz-background-clip: text;  
+  -moz-text-fill-color: transparent;  
+  -webkit-text-fill-color: transparent;  
+}
+
+/* Education & Work Section */
+
+.education-work-wrapper p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.education-work-wrapper .date {
+  margin: .5em;
+  margin-top: 2em;
+}
+
+/* Links */
+
+a {
+  color: var(--base);
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: .5em 1em;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border: 3px solid transparent;
+}
+
+footer a {
+  color: var(--second-accent);
+}
+
+nav a:hover {
+  transform: scale(1.2);
+  border-bottom: var(--accent) 3px solid;
+  color: var(--second-accent);
+}
+
+a:focus {
+  border: none;
+  outline: 2px solid var(--accent);
+  transform: scale(1.2);
+}
+
+/* Layout */
+
+header {
+  /* background-color: var(--accent); */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 0;
 }
 
-.App-link {
-  color: #61dafb;
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.project-list {
+  margin-top: 5em;
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: repeat(auto, 1fr);
+  grid-gap: 20px;
+}
+
+.project-list li {
+  place-self: center;
+}
+
+.projects img {
+  width: 275px;
+  height: 400px;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--text-dark);
+  color: var(--text-light);
+}
+
+.about-me,
+.projects,
+.contact {
+  padding: 2em 3em;
+  color: var(--text-dark);
+  background-color: var(--text-light);
+}
+
+.skills,
+.education,
+.work-experience {
+  padding: 1em 3em;
+  background-color: var(--text-medium);
+  color: var(--text-light);   
+}
+
+/* Lists decoration */
+
+ul {
+  list-style: none;
+}
+
+li p {
+  margin: .3em auto;
+  font-size: 1.2rem;
+}
+
+/* Education */
+
+.education p {
+  margin: .5em 0;
+}
+
+.title-text {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--accent)
+}
+
+.education .date, 
+.work-experience .date {
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.date::after {
+  content: "";
+  display: block;
+  border-bottom: var(--accent) 1px solid;
+  width: 300px;
+  margin: 0 auto;
+}
+
+/* Form */
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 20em;
+  font-weight: bold;
+}
+
+input {
+  height: 1em;
+  margin-bottom: 2em;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  padding: 1em;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--second-accent);
+}
+
+label {
+  margin-bottom: .2em;
+}
+
+textarea {
+  height: 10em;
+  resize: none;
+  margin-bottom: 2em;
+  outline: none;
+  border: none;  
+  border-radius: 3px;  
+  padding: 1em;
+}
+
+button {
+  background-color: var(--second-accent);
+  color: var(--text-light);
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 3px;
+  width: 15em;
+  height: 3em;
+  align-self: center;
+}
+
+button:focus {
+  outline: 2px solid var(--text-dark);
+
+}
+
+/* Footer */
+
+.footer-text {
+  font-size: 1rem;
+  margin-top: 0;
+}
+
+footer p {
+  margin-bottom: .5em;
+}
+
+/* Heading decorations */
+
+header .subtitle::after {
+  content: "";
+  display: block;
+  border-top: var(--text-mediumlight) solid 20px;
+  border-radius: 3px;
+  width: 200px;
+  margin: auto;
+  margin-top: -24px;
+}
+
+.about-me h2::after, 
+.projects h2::after, 
+.contact h2::after {
+  content: "";
+  display: block;  
+  border-bottom: var(--accent) solid 15px;
+  border-radius: 3px;
+  width: 300px;
+  margin: auto;
+  margin-top: -30px;
+}
+
+.skills h2::after, 
+.education h2::after, 
+.work-experience h2::after {
+  content: "";
+  display: block;  
+  border-bottom: var(--second-accent) solid 15px;
+  border-radius: 3px;
+  width: 300px;
+  margin: auto;
+  margin-top: -30px;
+}
+
+
+
+@media (min-width: 900px) {
+
+  h1 {
+    font-size: 4.5rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  header .subtitle {
+    font-size: 1.5rem;
   }
+
+  header .subtitle::after {
+    width: 300px;
+    margin-top: -40px;
+    border-width: 42px;
+    border-radius: 10px;
+  }
+
+  /* Layout */
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2em;
+  }
+
+  .about-me {
+    padding: 2em 10em;
+  }
+
+  .skills {
+    display: flex;
+    justify-content: center;
+    padding: 2em 10em;
+  }
+
+  .skills section {
+    margin: 0 5em;
+  }
+  
+  .education-work-wrapper {
+    display: flex;
+  }
+
+  .education {
+    padding-left: 5em;
+    padding-right: 4em;
+  }
+
+  .work-experience {
+    padding-right: 5em; 
+    padding-left: 4em; 
+  }
+
+  .education, .work-experience {
+    display: flex;
+    flex-direction: column;
+    min-width: 40vw;
+  }
+  
+  .project-list {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  form {
+    width: 40em;
+  }
+  
+  /* .projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em 10em;
+  }
+  
+  .project-list {
+    display: flex;
+    justify-content: center;
+  } */
 }
