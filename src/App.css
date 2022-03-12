@@ -7,29 +7,44 @@
 }
 
 body {
+  background-color: var(--text-dark);
   box-sizing: border-box;
   margin: 0 auto;
   height: 100vh;
   font-family: 'Roboto', sans-serif;
-  line-height: 1.6;  
+  line-height: 1.6;
+  letter-spacing: 1px;
 }
 
-/* Typography */
+/* Typography and Lists */
 
 h1 {
   font-size: 2.5rem;
+  letter-spacing: 5px;
 }
 
 h2 {
   font-size: 1.7rem;
   text-align: center;
+  letter-spacing: 3px;
 }
 
 p {
   font-size: 1.2rem;
 }
 
-/* Education & Work */
+ul {
+  list-style: none;
+}
+
+li p {
+  margin: .3em auto;
+  font-size: 1.2rem;
+}
+
+/* Animations */
+
+/* Currently studying animation */
 
 .current {
   color: var(--second-accent);
@@ -47,7 +62,23 @@ p {
   to {color: var(--accent);}
 }
 
-/* Header section */
+/* Fade in animation */
+
+nav {
+  animation-fill-mode: both;  
+  animation: fadeIn 5s;
+  -webkit-animation: fadeIn 5s;
+  -moz-animation: fadeIn 5s;
+  -o-animation: fadeIn 5s;
+  -ms-animation: fadeIn 5s;    
+}
+
+@keyframes fadeIn {
+  from {opacity:0;}
+  to {opacity:1;}
+}
+
+/* Header gradient and animation */
 
 header {
   padding: 0 5em;
@@ -63,12 +94,14 @@ header {
 
 @keyframes background-gradient {
   0% {background: radial-gradient(circle, var(--text-medium) 0%, var(--text-dark) 100%);}
-  20% {background: radial-gradient(circle, var(--text-medium) 3%, var(--text-dark) 100%);}
-  40% {background: radial-gradient(circle, var(--text-medium) 6%, var(--text-dark) 100%);}
-  60% {background: radial-gradient(circle, var(--text-medium) 9%, var(--text-dark) 100%);}
-  80% {background: radial-gradient(circle, var(--text-medium) 12%, var(--text-dark) 100%);}
-  100% {background: radial-gradient(circle, var(--text-medium) 15%, var(--text-dark) 100%);}
+  20% {background: radial-gradient(circle, var(--text-medium) 2%, var(--text-dark) 100%);}
+  40% {background: radial-gradient(circle, var(--text-medium) 4%, var(--text-dark) 100%);}
+  60% {background: radial-gradient(circle, var(--text-medium) 6%, var(--text-dark) 100%);}
+  80% {background: radial-gradient(circle, var(--text-medium) 8%, var(--text-dark) 100%);}
+  100% {background: radial-gradient(circle, var(--text-medium) 10%, var(--text-dark) 100%);}
 }
+
+/* Header style */
 
 header h1 {
   color: var(--text-light);
@@ -93,6 +126,7 @@ header p {
 .subtitle {
   margin-top: 0;
   color: var(--text-light);
+  letter-spacing: 5px;
   font-weight: bold;
   margin-bottom: 1em;
   padding: 0 1em;
@@ -104,18 +138,6 @@ header p {
   -moz-background-clip: text;  
   -moz-text-fill-color: transparent;  
   -webkit-text-fill-color: transparent;  
-}
-
-/* Education & Work Section */
-
-.education-work-wrapper p {
-  margin: 0;
-  font-size: 1.1rem;
-}
-
-.education-work-wrapper .date {
-  margin: .5em;
-  margin-top: 2em;
 }
 
 /* Links */
@@ -140,9 +162,19 @@ footer a {
   color: var(--second-accent);
 }
 
+nav {
+  letter-spacing: 4px;
+}
+
 nav a:hover {
   transform: scale(1.2);
   border-bottom: var(--accent) 3px solid;
+  border-radius: 3px;
+}
+
+a:hover {
+  transform: scale(1.2);
+  border-bottom: var(--second-accent) 2px solid;
   border-radius: 3px;
 }
 
@@ -158,7 +190,21 @@ a:active {
   border: 3px solid transparent;
 }
 
-/* Layout */
+.secondary-link {
+  padding: 0;
+  background: linear-gradient(45deg, var(--text-medium), var(--second-accent));
+  background-clip: text;  
+  -webkit-background-clip: text;  
+  -moz-background-clip: text;  
+  -moz-text-fill-color: transparent;  
+  -webkit-text-fill-color: transparent;  
+}
+
+.secondary-link:hover {
+  border-bottom: var(--second-accent) 3px solid;
+}
+
+/* Layout setup */
 
 header {
   background-color: var(--accent);
@@ -201,9 +247,12 @@ nav {
   width: 300px;
 }
 
-.projects img {
-  width: 230px;
+.project-images {
+  width: 200px;
   height: 300px;
+  margin-top: 1.5em;
+  border: var(--accent) 3px solid;
+  border-radius: 3px;
 }
 
 .separator {
@@ -223,7 +272,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--text-medium);
+  background-color: var(--text-dark);
   color: var(--text-light);
 }
 
@@ -244,32 +293,29 @@ footer {
   margin: 1.5em;
 }
 
-.project-list img {
-  margin-top: 1.5em;
-  border: var(--accent) 3px solid;
-  border-radius: 3px;
-}
-
 .skills,
 .education,
 .work-history {
   padding: 1em 3em;
-  background-color: var(--text-medium);
+  background-color: var(--text-dark);
   color: var(--text-light);   
 }
 
-/* Lists decoration */
-
-ul {
-  list-style: none;
+.work-history {
+  background-color: var(--text-medium);  
 }
 
-li p {
-  margin: .3em auto;
-  font-size: 1.2rem;
+/* Education & work history section */
+
+.education-work-wrapper p {
+  margin: 0;
+  font-size: 1.1rem;
 }
 
-/* Education */
+.education-work-wrapper .date {
+  margin: .5em;
+  margin-top: 2em;
+}
 
 .education p {
   margin: .5em 0;
@@ -297,34 +343,38 @@ li p {
   margin: 0 auto;
 }
 
-/* Form */
+/* Form section */
 
-form {
+#email-form {
   display: flex;
   flex-direction: column;
   width: 20em;
   font-weight: bold;
+  justify-content: center;
+  align-items: center;
 }
 
-input {
+#input {
   height: 1em;
   margin-bottom: 2em;
   outline: none;
   border: none;
   border-radius: 3px;
   padding: 1em;
+  width: 50vw;
 }
 
-input:focus,
-textarea:focus {
+#input:focus,
+#textarea:focus {
   outline: 2px solid var(--second-accent);
 }
 
 label {
   margin-bottom: .2em;
+  display: block;
 }
 
-textarea {
+#textarea {
   height: 10em;
   resize: none;
   margin-bottom: 2em;
@@ -332,6 +382,7 @@ textarea {
   border: none;  
   border-radius: 3px;  
   padding: 1em;
+  width: 50vw;
 }
 
 button {
@@ -345,7 +396,7 @@ button {
   width: 15em;
   height: 3em;
   align-self: center;
-  background: linear-gradient(45deg, var(--accent), var(--second-accent));
+  background: linear-gradient(45deg, var(--accent), var(--text-dark));
   margin-bottom: 1em;
 }
 
@@ -375,20 +426,21 @@ footer p {
   height: 50px;
 }
 
-/* Heading decorations */
+/* Pseudo classes headings decorations */
 
 header .subtitle::after {
   content: "";
   display: block;
-  border-top: var(--text-medium) solid 20px;
+  border-top: var(--text-medium) solid 25px;
   border-radius: 3px;
-  width: 200px;
-  margin: auto;
-  margin-top: -24px;
+  width: 285px;
+  margin: 0;
+  margin-top: -27px;
 }
 
 .about-me h2::after, 
-.projects h2::after, 
+.projects h2::after,
+.work-history h2::after,  
 .contact h2::after {
   content: "";
   display: block;  
@@ -399,12 +451,16 @@ header .subtitle::after {
   margin-top: -30px;
 }
 
-.skills h2::after, 
-.education h2::after, 
 .work-history h2::after {
+  border-bottom: var(--text-dark) solid 15px;
+}
+
+
+.skills h2::after, 
+.education h2::after {
   content: "";
   display: block;  
-  border-bottom: var(--second-accent) solid 15px;
+  border-bottom: var(--text-medium) solid 15px;
   border-radius: 3px;
   width: 300px;
   margin: auto;
@@ -412,6 +468,8 @@ header .subtitle::after {
 }
 
 @media (min-width: 900px) {
+
+  /* Layout fixes */
 
   h1 {
     font-size: 4.5rem;
@@ -422,13 +480,11 @@ header .subtitle::after {
   }
 
   header .subtitle::after {
-    width: 300px;
+    width: 390px;
     margin-top: -40px;
     border-width: 42px;
     border-radius: 10px;
   }
-
-  /* Layout */
 
   nav {
     display: flex;
@@ -476,28 +532,21 @@ header .subtitle::after {
   .project-list {
     padding: 0 1em;
   }
-
-  form {
-    width: 40em;
-  }
-}
-
-
-@media (min-width: 900px) {
+  
   .project-list li {
     flex-direction: row;
     min-width: 800px;
   }
-
+  
   .project-list li::after {
     display: none;
   }
-
+  
   .separator {
     display: block;
     place-self: center;
   }
-
+  
   .separator::after {
     content: "";
     display: block;
@@ -505,8 +554,12 @@ header .subtitle::after {
     border-radius: 3px;
     width: 500px;
   }
-
-  .projects img {
+  
+  .project-images {
     margin-right: 2em;
+  }
+
+  form {
+    width: 40em;
   }
 }
