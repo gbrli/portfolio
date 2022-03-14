@@ -1,5 +1,6 @@
-import github from "../github-pk.svg"
-import linkedin from "../linkedin-pk.svg"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+
 import emailjs from "emailjs-com";
 import { Form, Input, TextArea, Button } from "semantic-ui-react";
 import Swal from "sweetalert2";
@@ -35,8 +36,12 @@ function Contact() {
           <h2>Get in Touch</h2>
           <p>You can find me on Github, LinkedIn, or simply email me with the form below.</p>
           <div className="links-wrapper">
-            <a href="https://github.com/Ademoons"><img className="social-icons" src={github} alt="github logo"></img></a>
-            <a href="https://www.linkedin.com/in/giuliabroli"><img className="social-icons" src={linkedin} alt="linkedin logo"></img></a>
+            <a href="https://github.com/Ademoons">
+              <FontAwesomeIcon className="social-icons" icon={faGithub} size="3x" alt="github logo" />
+            </a>
+            <a href="https://www.linkedin.com/in/giuliabroli">
+              <FontAwesomeIcon className="social-icons" icon={faLinkedin} size="3x" alt="linkedin logo" />
+            </a>
           </div>
 
       <Form id="email-form" onSubmit={handleOnSubmit}>
@@ -65,21 +70,9 @@ function Contact() {
           required
         />
         <Button type="submit" >Email Me</Button>
-      </Form>
-
-
-          {/* <form>
-
-            <label>Your Name</label>
-            <input placeholder="John Doe"></input>
-            <label>Email Address</label>
-            <input placeholder="john@doe.com"></input>
-            <label>Insert Message</label>
-            <textarea placeholder="Words are welcome here :)"></textarea>
-            <button>Email Me</button>
-          </form> */}
-        </section>
+        </Form>
+      </section>
     )
   }
 
-export default Contact;
+export default Contact

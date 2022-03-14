@@ -1,5 +1,6 @@
 import wip from "../wip.jpg"
 import portfolio from "../portfolio.jpg"
+import pokedice from "../pokedice.jpg"
 
 function Projects() {
     return (
@@ -17,12 +18,11 @@ function Projects() {
                 </li>
                 <div className="separator"></div>
                 <li>
-                    <img className="project-images" src={wip} alt="project screenshot"></img>
+                    <img className="project-images" src={pokedice} alt="project screenshot"></img>
                     <article>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <p><a href="https://github.com/Ademoons" className="secondary-link">Link to Source Code</a></p>
+                        <p>A dice game recreating a Pokémon battle thanks to the pokeapi API. Done entirely in vanilla HTML/CSS/JS.</p>
+                        <p>I have adapted this project from the Scrimba Front End Developer Path, redesigned it completely and changed its functionality to gather API data instead of static data.</p>                       
+                        <p><a href="https://github.com/Ademoons/Pokemon-Dice-Fight" className="secondary-link">Link to Source Code</a></p>
                     </article>                
                 </li>
                 <div className="separator"></div>

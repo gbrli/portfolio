@@ -204,6 +204,13 @@ a:active {
   border-bottom: var(--second-accent) 3px solid;
 }
 
+.title a {
+  font-size: 2.5rem;
+  letter-spacing: 5px;
+  margin: 0;
+  padding: 0;
+}
+
 /* Layout setup */
 
 header {
@@ -420,10 +427,8 @@ footer p {
   padding: .5em;
 }
 
-.social-icons,
-.social-icons a {
-  width: 50px;
-  height: 50px;
+.social-icons {
+   color: var(--second-accent);
 }
 
 /* Pseudo classes headings decorations */
@@ -471,7 +476,7 @@ header .subtitle::after {
 
   /* Layout fixes */
 
-  h1 {
+  .title a {
     font-size: 4.5rem;
   }
 

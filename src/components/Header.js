@@ -1,7 +1,7 @@
 function Header() {
     return (
         <header id="introduction" className="about-header">
-            <h1>Giulia Broli</h1>
+            <h1 className="title"><a href=".">Giulia Broli</a></h1>
             <p><span className="subtitle">Frontend Developer</span></p>
             <nav>
             <a href="#about-me">About</a>
