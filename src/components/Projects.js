@@ -1,6 +1,6 @@
-import portfolio from "../portfolio.jpg"
-import pokedice from "../pokedice.jpg"
-import sss from "../sss.jpg"
+import portfolio from "../images/portfolio.jpg"
+import pokedice from "../images/pokedice.jpg"
+import sss from "../images/sss.jpg"
 
 function Projects() {
     return (
