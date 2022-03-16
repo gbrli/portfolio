@@ -1,6 +1,6 @@
-import wip from "../wip.jpg"
 import portfolio from "../portfolio.jpg"
 import pokedice from "../pokedice.jpg"
+import sss from "../sss.jpg"
 
 function Projects() {
     return (
@@ -13,7 +13,7 @@ function Projects() {
                         <p>This portfolio is a static web page generated with React's own JSX and a standard CSS stylesheet. Each section of the website is its own component, imported into the whole application.</p>
                         <p>I have used Create React App for its simplicity, and the functionality of the form on the contact page is implemented with the EmailJS library. The social media icons are sourced from Font Awesome.</p>
                         <p>I have designed the portfolio from scratch as a challenge instead of using a template.</p>
-                        <p><a href="https://github.com/Ademoons/portfolio" className="secondary-link">Link to Source Code</a></p>
+                        <p><a href="https://github.com/stungmoon/portfolio" className="secondary-link">Link to Source Code</a></p>
                     </article>
                 </li>
                 <div className="separator"></div>
@@ -22,17 +22,18 @@ function Projects() {
                     <article>
                         <p>A dice game recreating a Pokémon battle thanks to the pokeapi API. Done entirely in vanilla HTML/CSS/JS.</p>
                         <p>I have adapted this project from the Scrimba Front End Developer Path, redesigned it completely and changed its functionality to gather API data instead of static data.</p>                       
-                        <p><a href="https://github.com/Ademoons/Pokemon-Dice-Fight" className="secondary-link">Link to Source Code</a></p>
+                        <p><a href="https://github.com/stungmoon/Pokemon-Dice-Fight" className="secondary-link">Link to Project</a></p>
+                        <p><a href="https://github.com/stungmoon/Pokemon-Dice-Fight" className="secondary-link">Link to Source Code</a></p>
                     </article>                
                 </li>
                 <div className="separator"></div>
                 <li>
-                    <img className="project-images" src={wip} alt="project screenshot"></img>
+                    <img className="project-images" src={sss} alt="project screenshot"></img>
                     <article>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <p><a href="https://github.com/Ademoons" className="secondary-link">Link to Source Code</a></p>
+                        <p>Shakespeare's sonnets are conveniently numbered 1 to 154 and they are among my favorite works of poetry, so why not create something to display them in whatever order I want?</p>
+                        <p>The project provides several detailed menu options to display different sonnets. Some of the options include searching by sonnet number or by word, displaying a sequence, applying a proportional sequence with a starting point, and more. Developed in vanilla JS, though I would like to move this to React Native one day.</p>
+                        <p><a href="https://github.com/stungmoon/Shakespeare-Sonnet-Sorter" className="secondary-link">Link to Project</a></p>
+                        <p><a href="https://github.com/stungmoon/Shakespeare-Sonnet-Sorter" className="secondary-link">Link to Source Code</a></p>
                     </article>                
                 </li>
           </ul>

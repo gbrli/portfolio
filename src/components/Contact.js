@@ -36,7 +36,7 @@ function Contact() {
           <h2>Get in Touch</h2>
           <p>You can find me on Github, LinkedIn, or simply email me with the form below.</p>
           <div className="links-wrapper">
-            <a href="https://github.com/Ademoons">
+            <a href="https://github.com/stungmoon">
               <FontAwesomeIcon className="social-icons" icon={faGithub} size="3x" alt="github logo" />
             </a>
             <a href="https://www.linkedin.com/in/giuliabroli">
