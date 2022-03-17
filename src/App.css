@@ -190,6 +190,10 @@ a:active {
   border: 3px solid transparent;
 }
 
+.image-link:hover {
+  border-bottom: none;
+}
+
 .secondary-link {
   padding: 0;
   background: linear-gradient(45deg, var(--text-medium), var(--second-accent));
@@ -236,11 +240,6 @@ nav {
   place-content: center;
   grid-gap: 2em;
 }
-
-.project-list a:hover {
-  border-bottom: none;
-}
-
 
 .project-list li {
   display: flex;

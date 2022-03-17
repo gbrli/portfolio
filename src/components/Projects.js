@@ -8,7 +8,7 @@ function Projects() {
             <h2>Projects</h2>
             <ul className="project-list">
                 <li>
-                <a href="https://giuliabroli.netlify.app" className="secondary-link" target="_blank" rel="noreferrer"><img className="project-images" src={portfolio} alt="project screenshot"></img></a>                    
+                <a href="https://giuliabroli.netlify.app" className="image-link" target="_blank" rel="noreferrer"><img className="project-images" src={portfolio} alt="project screenshot"></img></a>                    
                     <article>
                         <p>This portfolio is a static web page generated with React's own JSX and a standard CSS stylesheet. Each section of the website is its own component, imported into the whole application.</p>
                         <p>I have used Create React App for its simplicity, and the functionality of the form on the contact page is implemented with the EmailJS library. The social media icons are sourced from Font Awesome.</p>
@@ -18,7 +18,7 @@ function Projects() {
                 </li>
                 <div className="separator"></div>
                 <li>
-                <a href="https://pokedice.netlify.app" className="secondary-link" target="_blank" rel="noreferrer"><img className="project-images" src={pokedice} alt="project screenshot"></img></a>
+                <a href="https://pokedice.netlify.app" className="image-link" target="_blank" rel="noreferrer"><img className="project-images" src={pokedice} alt="project screenshot"></img></a>
                     <article>
                         <p>A dice game recreating a Pokémon battle thanks to the pokeapi API. Done entirely in vanilla HTML/CSS/JS.</p>
                         <p>I have adapted this project from the Scrimba Front End Developer Path, redesigned it completely and changed its functionality to gather API data instead of static data.</p>                       
@@ -28,7 +28,7 @@ function Projects() {
                 </li>
                 <div className="separator"></div>
                 <li>
-                    <a href="https://sonnet-sorter.netlify.app" className="secondary-link" target="_blank" rel="noreferrer"><img className="project-images" src={sss} alt="project screenshot"></img></a>
+                    <a href="https://sonnet-sorter.netlify.app" className="image-link" target="_blank" rel="noreferrer"><img className="project-images" src={sss} alt="project screenshot"></img></a>
 
                     <article>
                         <p>Shakespeare's sonnets are conveniently numbered 1 to 154 and they are among my favorite works of poetry, so why not create something to display them in whatever order I want?</p>
