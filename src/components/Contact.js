@@ -36,10 +36,10 @@ function Contact() {
           <h2>Get in Touch</h2>
           <p>You can find me on Github, LinkedIn, or simply email me with the form below.</p>
           <div className="links-wrapper">
-            <a href="https://github.com/stungmoon">
+            <a href="https://github.com/stungmoon" target="_blank" rel="noreferrer">
               <FontAwesomeIcon className="social-icons" icon={faGithub} size="3x" alt="github logo" />
             </a>
-            <a href="https://www.linkedin.com/in/giuliabroli">
+            <a href="https://www.linkedin.com/in/giuliabroli" target="_blank" rel="noreferrer">
               <FontAwesomeIcon className="social-icons" icon={faLinkedin} size="3x" alt="linkedin logo" />
             </a>
           </div>

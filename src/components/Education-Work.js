@@ -20,7 +20,7 @@ function EducationWork() {
             <h2>Work History</h2>
             <p className="date">2020-2021</p>
             <p><span className="title-text">Concierge Supervisor in London, UK</span></p>
-            <p>I started my role as a concierge team member and got promoted to supervisor a year into the role. Our work continued during the pandemic and our workload tripled, but me and the entire team pushed through. I was also employee of the year 2020! :)</p>
+            <p>I started my role as a concierge team member and got promoted to supervisor a year into the role. The entire team and I kept working during the pandemic, and we our workload increased because we were in the residential industry. I was also employee of the year 2020! :)</p>
             <p className="date">2016-2019</p>
             <p><span className="title-text">Logistics Assistant in Dublin, ROI</span></p>
             <p>I worked for a small music business where I had multiple varied responsibilities, including running an entire e-commerce business on my own and creating an Amazon store independently.</p>

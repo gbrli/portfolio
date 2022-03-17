@@ -5,7 +5,7 @@ import Projects from "./components/Projects"
 import EducationWork from "./components/Education-Work"
 import Contact from "./components/Contact"
 import Footer from "./components/Footer"
-import './App.css'
+import "./App.css"
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
       </main>
       <Footer />
     </div>
-  );
+  )
 }
 
 export default App

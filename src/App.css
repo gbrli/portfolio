@@ -237,6 +237,11 @@ nav {
   grid-gap: 2em;
 }
 
+.project-list a:hover {
+  border-bottom: none;
+}
+
+
 .project-list li {
   display: flex;
   flex-direction: column;
